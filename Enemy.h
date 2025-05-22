@@ -1,9 +1,8 @@
-// Step 4: Enemy.h
 #ifndef ENEMY_H
 #define ENEMY_H
 #include <SFML/Graphics.hpp>
 #include <vector>
-class Enemy {
+class Enemy  { 
 private:
     sf::Sprite sprite;
 public:

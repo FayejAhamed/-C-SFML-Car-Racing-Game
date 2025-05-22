@@ -174,11 +174,14 @@ void Game::render() {
     for (auto& stripe : rightCurbs) window.draw(stripe);
     window.draw(road);
     for (auto& line : laneLines) {
-        line.move(0.f, speed);
-        if (line.getPosition().y > 600)
-            line.setPosition(line.getPosition().x, -80.f);
+        if (!gameOver) {
+            line.move(0.f, speed);
+            if (line.getPosition().y > 600)
+                line.setPosition(line.getPosition().x, -80.f);
+        }
         window.draw(line);
     }
+
     // window.clear(); ❌ REMOVE this second clear that erases background
     car->draw(window, shakeOffset);
     enemy1->draw(window, shakeOffset);
